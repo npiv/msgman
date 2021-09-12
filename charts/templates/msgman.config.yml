@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: spring-config
+data:
+  redis.port: "6379"
+  redis.hostname: "redis-svc"
+  management.endpoints.web.exposure.include: "*"
+  msgman.producer.enabled: "true"
+  msgman.producer.name: randomMsg
+  msgman.producer.chance: "90"
+  msgman.producer.sleep: "100"
+  msgman.consumer.enabled: "true"

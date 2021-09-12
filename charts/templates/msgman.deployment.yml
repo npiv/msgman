@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: msgman
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: msgman
+  template:
+    metadata:
+      labels:
+        app: msgman
+    spec:
+      containers:
+      - name: msgman
+        image: be.glowfly/msgman:0.1
+        ports:
+        - containerPort: 8080
+        envFrom:
+          - configMapRef:
+              name: spring-config

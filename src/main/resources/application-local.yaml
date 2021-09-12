@@ -4,6 +4,10 @@ management:
       exposure:
         include: "*"
 
+redis:
+    hostname: localhost
+    port: 6379
+
 msgman:
   producer:
     enabled: true

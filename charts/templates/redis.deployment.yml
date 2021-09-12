@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: msg-redis
+spec:
+  selector:
+    matchLabels:
+      app: msg-redis
+  template:
+    metadata:
+      labels:
+        app: msg-redis
+    spec:
+      containers:
+      - name: msg-redis
+        image: redis
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 6379
