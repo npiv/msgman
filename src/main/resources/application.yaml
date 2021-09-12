@@ -1,0 +1,14 @@
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+msgman:
+  producer:
+    enabled: true
+    name: randomMsg
+    chance: 90
+    sleep: 100
+  consumer:
+    enabled: true
